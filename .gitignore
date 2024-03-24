@@ -1,0 +1,12 @@
+.venv
+.vscode
+*.blend*
+.env*
+!.env.examples
+src/test.ipynb
+annotations*
+!annotations.json
+images
+qdrant*
+**/__pycache__
+audio

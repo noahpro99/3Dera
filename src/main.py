@@ -1,10 +1,11 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import subprocess
 import uvicorn
 import make_scene
+import play_history
 
 app = FastAPI(
     title="Objaverse API",
@@ -51,6 +52,16 @@ async def create_scene(request: RequestModelInput):
             "powershell.exe",
             "-Command",
             "& 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Blender\\blender.exe' .\\output.blend",
+        ]
+    )
+
+    audio_file = play_history.create_wiki_audio(request.text)
+
+    subprocess.Popen(
+        [
+            "powershell.exe",
+            "-Command",
+            f"start {audio_file}",
         ]
     )
 

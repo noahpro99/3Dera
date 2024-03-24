@@ -9,3 +9,4 @@ qdrant_client
 sentence-transformers
 fastapi
 uvicorn
+wikipedia

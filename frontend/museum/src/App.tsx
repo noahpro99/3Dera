@@ -1,13 +1,8 @@
-import Button from './Components/Button';
-import TimeSlider from './Components/slider'
+import React, { useState } from "react";
+import Home from "./home";
 
-function App() {
-  return (
-    <div className="App">
-      <TimeSlider />
-      <Button />
-    </div>
-  );
-}
+const App: React.FC = () => {
+  return <Home />;
+};
 
 export default App;

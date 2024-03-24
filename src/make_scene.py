@@ -324,6 +324,16 @@ def create_scene(scene_query: str, blender_path: str, output_path: str):
     for obj in bpy.data.objects:
         bpy.data.objects.remove(obj)
 
+    bpy.ops.object.camera_add(location=(0, 0, 2), rotation=(1.5708, 0, 0))
+
+    print("Getting skybox...")
+    skybox_query = get_skybox_query(scene_query)
+    print(skybox_query)
+    skybox_file = get_skybox(skybox_query)
+    print(f"Got skybox at {skybox_file}")
+    add_skybox_to_scene(skybox_file)
+    print("Added skybox to scene")
+
     print(f"Gathering models for {scene_query}...")
     models = get_models(scene_query)
     print(models)
@@ -344,14 +354,6 @@ def create_scene(scene_query: str, blender_path: str, output_path: str):
                 print(f"Added {model} to scene at {placement}")
             except Exception as e:
                 print(f"Could not add {model} to scene at {placement} due to {e}")
-
-    print("Getting skybox...")
-    skybox_query = get_skybox_query(scene_query)
-    print(skybox_query)
-    skybox_file = get_skybox(skybox_query)
-    print(f"Got skybox at {skybox_file}")
-    add_skybox_to_scene(skybox_file)
-    print("Added skybox to scene")
 
     print("Adding ground...")
     ground_query = get_ground_query(scene_query)

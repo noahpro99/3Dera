@@ -1,17 +1,20 @@
-import React from "react";
+import React from 'react';
+import { HistEvent } from "../types";
 
-class Button extends React.Component {
+interface ButtonProps {
+  eventData: HistEvent;
+}
+
+class Button extends React.Component<ButtonProps> {
   postData = async () => {
+    const { eventData } = this.props;
     try {
       const response = await fetch('http://localhost:8000/create_scene', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          text: 'Moon Landing',
-          date: '1969',
-        } )
+        body: JSON.stringify(eventData)
       });
 
       const data = await response.json();
@@ -22,11 +25,9 @@ class Button extends React.Component {
   }
 
   render() {
-    return (
-      <button onClick={this.postData}>
-        Send Data
-      </button>
-    );
+    return <button onClick={this.postData} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Send Data
+    </button>;
   }
 }
 
