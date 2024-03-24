@@ -1,8 +1,8 @@
 import React from 'react';
-import { HistEvent } from "../types";
+import { Event } from '../types';
 
 interface ButtonProps {
-  eventData: HistEvent;
+  eventData: Event;
 }
 
 class Button extends React.Component<ButtonProps> {

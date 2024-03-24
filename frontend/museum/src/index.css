@@ -19,8 +19,8 @@ code {
     monospace;
 }
 :root {
-  --main-color: #995925;
-  --main-color-hover: #a1724c;
+  --main-color: rgb(104, 117, 217);
+  --main-color-hover: rgb(104, 117, 217, 0.2);
   --track-color: #ddd;
 /* Default mark color*/
   --mark-color: #aaaaaa;
@@ -50,7 +50,7 @@ code {
   background: var(--track-color);
 }
 
-.customSlider-track.customSlider-track-1 {
+.customSlider-track.customSlider-track-0 {
   /* color of the track before the thumb */
   background: var(--main-color);
 }
