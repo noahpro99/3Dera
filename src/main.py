@@ -51,7 +51,7 @@ async def create_scene(request: RequestModelInput):
         [
             "powershell.exe",
             "-Command",
-            f"start {audio_file}",
+            f"Start-Process -FilePath 'powershell.exe' -ArgumentList 'Start {audio_file}' -WindowStyle Minimized",
         ]
     )
 

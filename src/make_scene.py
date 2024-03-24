@@ -1,6 +1,7 @@
 from io import BytesIO
 import json
 import os
+import time
 import bpy
 import objaverse
 import argparse
@@ -358,12 +359,14 @@ def create_scene(scene_query: str, blender_path: str, output_path: str):
     print("Adding ground...")
     ground_query = get_ground_query(scene_query)
     print(ground_query)
+    ground_file = None
     for i in range(6):
         try:
             ground_file = get_ground(ground_query)
             break
         except:
             print(f"Failed to get ground, retrying... ({i}/5)")
+            time.sleep(2)
 
     print(f"Got ground at {ground_file}")
     add_ground_to_scene(ground_file)
