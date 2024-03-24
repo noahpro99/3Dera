@@ -14,13 +14,6 @@ app = FastAPI(
     docs_url="/",
 )
 
-available_scenes = [
-    "Moon Landing",
-    "Spanish Expedition to Americas",
-    "Boston Massacre",
-    "Titanic Sinking",
-    "Pyramids of Giza",
-]
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,15 +25,12 @@ app.add_middleware(
 
 class RequestModelInput(BaseModel):
     text: str
-    date: str
-    location: str
+    date: int
 
 
 @app.post("/create_scene")
 async def create_scene(request: RequestModelInput):
     scene_query = f"{request.date} {request.text}"
-    if request.text not in available_scenes:
-        return JSONResponse(content={"message": "Scene not available!"})
     print(scene_query)
     make_scene.create_scene(
         scene_query,

@@ -1,10 +1,4 @@
-export type Era = {
-  name: string;
-  startYear: number;
-  endYear: number;
-};
-
-export type Event = {
+export type HistEvent = {
   id: string;
   name: string;
   year: number;
@@ -12,7 +6,10 @@ export type Event = {
   coordinates: { x: number; y: number };
 };
 
-export type EventYear = {
-  era: Era;
-  events: Event[];
+export type Era = {
+  name: string;
+  startYear: number;
+  endYear: number;
+  description: string;
+  events: HistEvent[];
 };
