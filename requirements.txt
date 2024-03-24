@@ -1,0 +1,11 @@
+bpy
+objaverse
+pip
+ipykernel
+openai
+python-dotenv
+pillow
+qdrant_client
+sentence-transformers
+fastapi
+uvicorn
