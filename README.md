@@ -1,3 +1,5 @@
+[![HooHacks 2024 Demo](http://img.youtube.com/vi/L3gGZ3T9t98/0.jpg)](http://www.youtube.com/watch?v=L3gGZ3T9t98 "HooHacks 2024 Demo")
+
 ## Inspiration
 
 All four of us are STEM majors, and all four of us did NOT have very memorable, interesting, or fun experiences learning history in school. But we believe that history as a subject is not boring at all. We wanted to enhance the experience of learning history in a way that is both immersive and interactive.
