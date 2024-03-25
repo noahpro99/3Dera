@@ -1,4 +1,13 @@
+![3Dera Logo](frontend/museum/public/logo.png)
+
+#1 Overall winner at UVA's premier hackathon, [HooHacks](https://www.hoohacks.io/) 2024!
+
+
 [![HooHacks 2024 Demo](http://img.youtube.com/vi/L3gGZ3T9t98/0.jpg)](http://www.youtube.com/watch?v=L3gGZ3T9t98 "HooHacks 2024 Demo")
+
+# 3Dera
+
+Learn history with VR and AI!
 
 ## Inspiration
 
